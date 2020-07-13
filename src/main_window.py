@@ -1,5 +1,6 @@
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5 import uic
 
 # import .ui file
@@ -7,7 +8,7 @@ from PyQt5 import uic
 form_class = uic.loadUiType("CC_Server_GUI.ui")[0]
 
 # GUI Class Define
-class WindowClass(QtWidgets.QMainWindow, form_class):
+class WindowClass(QMainWindow, form_class):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
