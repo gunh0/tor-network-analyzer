@@ -152,7 +152,7 @@ def make_copy_cmd_list():
     copy_pcap = "cp -r /home/tor/tor/0625/* /home/jjangga94temp/Tor_CIFS/Traffic/0625"
     # copy_pcap = "cp -r /home/tor/tor/100_Hidden_TBB_0310_non_fix/* /home/jjangga94temp/Tor_CIFS/Traffic/2020_Traffic"
     # copy_pcap = "sudo scp /home/tor/tor/100_Hidden_TBB_0310_non_fix/* 127.0.0.1:/home/jjangga94temp/Tor_CIFS/Traffic/fastTest"
-# copy_pcap = "cp -r /home/tor/tor/100_Hidden_TBB_0310_non_fix/* /home/jjangga94temp/Tor_CIFS/Traffic/0310_non_fix"
+    # copy_pcap = "cp -r /home/tor/tor/100_Hidden_TBB_0310_non_fix/* /home/jjangga94temp/Tor_CIFS/Traffic/0310_non_fix"
     # copy_pcap = "cd /home/tor/tor/100_Hidden_TBB_0310_non_fix/; tar cz * | ssh 121.67.187.138 tar xz -C /home/jjangga94temp/Tor_CIFS/Traffic/fastTest"
     # copy_pcap = "cp -r /home/tor/tor/100_Hidden_TBB/* /home/tor/Tor_CIFS/Json"
     copy_cmd_list.put(copy_pcap)

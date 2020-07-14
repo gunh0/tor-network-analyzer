@@ -1,10 +1,57 @@
 import sys
+import time
+
+from threading import Thread
+from command import command
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import uic
 
 # import .ui file
 # .ui file must be located in the same directory as the Python code file.
 form_class = uic.loadUiType("CC_Server_GUI.ui")[0]
+
+
+class CommandSerize9999(Thread):
+    def __init__(self, queue, ip_addr):
+        Thread.__init__(self)
+        self.queue = queue
+        self.ip_addr = ip_addr
+        self.port = "9999"
+
+    def run(self):
+        while True:
+            command_list = self.queue.get()
+            if command_list is None:
+                break
+            for c in range(command_list.qsize()):
+                com = command_list.get()
+                print(c, ": ", com)
+                command(self.ip_addr, self.port, com)
+                time.sleep(0.5)
+            self.queue.task_done()
+
+
+class CommandSerize9998(Thread):
+    def __init__(self, queue, ip_addr):
+        Thread.__init__(self)
+        self.queue = queue
+        self.ip_addr = ip_addr
+        self.port = "9998"
+
+    def run(self):
+        while True:
+            command_list = self.queue.get()
+            if command_list is None:
+                break
+
+            for c in range(command_list.qsize()):
+                print(c, ": ", com)
+                com = command_list.get()
+                command(self.ip_addr, self.port, com)
+
+                time.sleep(0.5)
+            self.queue.task_done()
 
 
 class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
@@ -15,6 +62,7 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
         self.pBtn100_collect.clicked.connect(self.pBtn100_collect_function)
 
     ip_list = []
+    cmd_list = []
 
     def pBtn100_collect_function(self):
         print("100 Collect Pressed")
