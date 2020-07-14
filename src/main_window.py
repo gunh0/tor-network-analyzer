@@ -1,8 +1,10 @@
 import sys
 import time
 
+from queue import Queue
 from threading import Thread
 from command import command
+from command import make_moz_cmd_list, make_tbb_cmd_list, make_copy_cmd_list, cmd_cmd_list, exit_cmd_list, watch_cmd_list
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import uic
@@ -46,8 +48,8 @@ class CommandSerize9998(Thread):
                 break
 
             for c in range(command_list.qsize()):
-                print(c, ": ", com)
                 com = command_list.get()
+                print(c, ": ", com)
                 command(self.ip_addr, self.port, com)
 
                 time.sleep(0.5)
@@ -59,13 +61,20 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
         super().__init__()
         self.setupUi(self)
 
+        self.pBtn100_collect.setCheckable(True)
         self.pBtn100_collect.clicked.connect(self.pBtn100_collect_function)
+        self.pBtn100_cmd.setCheckable(True)
+        self.pBtn100_cmd.clicked.connect(self.pBtn100_cmd_function)
 
     ip_list = []
     cmd_list = []
+    gyooqueue = Queue()
+    thread_list = []
 
     def pBtn100_collect_function(self):
         print("100 Collect Pressed")
+        self.pBtn100_collect.setEnabled(False)
+
         self.ip_list = []
         start_ip_host = int(self.sip1004.text())
         last_ip_host = int(self.lip1004.text())
@@ -74,6 +83,42 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
                 self.sip1003.text()+"."+str(i)
             self.ip_list.append(input_ip)
         print("IP List: ", self.ip_list)
+
+        self.pBtn100_collect.setEnabled(True)
+
+    def pBtn100_cmd_function(self):
+        print("100 CMD Sending Pressed")
+        self.pBtn100_cmd.setEnabled(False)
+
+        self.ip_list = []
+        start_ip_host = int(self.sip1004.text())
+        last_ip_host = int(self.lip1004.text())
+        for i in range(start_ip_host, last_ip_host+1):
+            input_ip = self.sip1001.text()+"."+self.sip1002.text()+"." + \
+                self.sip1003.text()+"."+str(i)
+            self.ip_list.append(input_ip)
+        # print("IP List: ", self.ip_list)
+
+        send_command = self.cmd100.text()
+        for i in self.ip_list:
+            self.cmd_list.append(cmd_cmd_list(send_command))
+
+        for item in self.cmd_list:
+            self.gyooqueue.put(item)
+
+        for ip_addr in self.ip_list:
+            t = CommandSerize9998(self.gyooqueue, ip_addr)
+            t.start()
+        self.gyooqueue.join()
+        print(self.gyooqueue)
+
+        for i in range(len(self.ip_list)):
+            self.gyooqueue.put(None)
+
+        for t in self.thread_list:
+            t.join()
+
+        self.pBtn100_cmd.setEnabled(True)
 
 
 # QApplication : Run App
