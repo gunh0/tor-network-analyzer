@@ -14,19 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btn_100">
-    <property name="geometry">
-     <rect>
-      <x>190</x>
-      <y>10</y>
-      <width>71</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>100</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
@@ -38,19 +25,6 @@
     </property>
     <property name="text">
      <string>Network Traffic Collector</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_200">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>10</y>
-      <width>71</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>200</string>
     </property>
    </widget>
    <widget class="QTabWidget" name="tabWidget">
@@ -72,10 +46,10 @@
      <attribute name="title">
       <string>100</string>
      </attribute>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="sip1001">
       <property name="geometry">
        <rect>
-        <x>90</x>
+        <x>80</x>
         <y>20</y>
         <width>41</width>
         <height>21</height>
@@ -105,46 +79,52 @@
        </rect>
       </property>
       <property name="text">
-       <string>Last IP :</string>
+       <string>End IP :</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>90</x>
         <y>60</y>
         <width>31</width>
         <height>21</height>
        </rect>
       </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
        <string>000</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_3">
+     <widget class="QLineEdit" name="sip1002">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>130</x>
         <y>20</y>
         <width>41</width>
         <height>21</height>
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_4">
+     <widget class="QLineEdit" name="sip1003">
       <property name="geometry">
        <rect>
-        <x>210</x>
+        <x>180</x>
         <y>20</y>
         <width>41</width>
         <height>21</height>
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_5">
+     <widget class="QLineEdit" name="lip1004">
       <property name="geometry">
        <rect>
-        <x>210</x>
+        <x>230</x>
         <y>60</y>
         <width>41</width>
         <height>21</height>
@@ -154,7 +134,7 @@
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>140</x>
         <y>60</y>
         <width>31</width>
         <height>21</height>
@@ -193,10 +173,10 @@
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="pBtn100_collect">
       <property name="geometry">
        <rect>
-        <x>280</x>
+        <x>290</x>
         <y>20</y>
         <width>231</width>
         <height>41</height>
@@ -206,10 +186,10 @@
        <string>Collect</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_7">
+     <widget class="QPushButton" name="pBtn100_send">
       <property name="geometry">
        <rect>
-        <x>400</x>
+        <x>410</x>
         <y>140</y>
         <width>111</width>
         <height>41</height>
@@ -219,10 +199,10 @@
        <string>Send</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="pBtn100_watch">
       <property name="geometry">
        <rect>
-        <x>280</x>
+        <x>290</x>
         <y>80</y>
         <width>231</width>
         <height>41</height>
@@ -232,10 +212,10 @@
        <string>Watch</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_6">
+     <widget class="QPushButton" name="pBtn100_copy">
       <property name="geometry">
        <rect>
-        <x>280</x>
+        <x>290</x>
         <y>140</y>
         <width>111</width>
         <height>41</height>
@@ -245,10 +225,10 @@
        <string>Copy</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_8">
+     <widget class="QPushButton" name="pBtn100_close">
       <property name="geometry">
        <rect>
-        <x>280</x>
+        <x>290</x>
         <y>200</y>
         <width>231</width>
         <height>41</height>
@@ -256,6 +236,35 @@
       </property>
       <property name="text">
        <string>Close</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="sip1004">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>20</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>60</y>
+        <width>31</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>000</string>
       </property>
      </widget>
     </widget>
@@ -273,7 +282,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Last IP :</string>
+       <string>End IP :</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_6">
@@ -282,49 +291,6 @@
         <x>30</x>
         <y>140</y>
         <width>221</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_8">
-      <property name="geometry">
-       <rect>
-        <x>100</x>
-        <y>60</y>
-        <width>31</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>000</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_7">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>60</y>
-        <width>41</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_8">
-      <property name="geometry">
-       <rect>
-        <x>150</x>
-        <y>20</y>
-        <width>41</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_9">
-      <property name="geometry">
-       <rect>
-        <x>90</x>
-        <y>20</y>
-        <width>41</width>
         <height>21</height>
        </rect>
       </property>
@@ -355,10 +321,85 @@
        <string>Start IP :</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_11">
+     <widget class="QPushButton" name="pBtn200_send">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>410</x>
+        <y>140</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Send</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pBtn200_watch">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>80</y>
+        <width>231</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Watch</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pBtn200_collect">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>20</y>
+        <width>231</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Collect</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pBtn200_copy">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>140</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Copy</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pBtn200_close">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>200</y>
+        <width>231</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Close</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_15">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>20</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
         <y>60</y>
         <width>31</width>
         <height>21</height>
@@ -374,79 +415,82 @@
        <string>000</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_10">
+     <widget class="QLineEdit" name="lineEdit_16">
       <property name="geometry">
        <rect>
-        <x>210</x>
+        <x>230</x>
         <y>20</y>
         <width>41</width>
         <height>21</height>
        </rect>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_9">
+     <widget class="QLineEdit" name="lineEdit_17">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>140</y>
-        <width>111</width>
-        <height>41</height>
+        <x>230</x>
+        <y>60</y>
+        <width>41</width>
+        <height>21</height>
        </rect>
       </property>
-      <property name="text">
-       <string>Send</string>
-      </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_10">
+     <widget class="QLineEdit" name="lineEdit_18">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>80</y>
-        <width>231</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Watch</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_11">
-      <property name="geometry">
-       <rect>
-        <x>280</x>
+        <x>130</x>
         <y>20</y>
-        <width>231</width>
-        <height>41</height>
+        <width>41</width>
+        <height>21</height>
        </rect>
-      </property>
-      <property name="text">
-       <string>Collect</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_12">
+     <widget class="QLabel" name="label_17">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>140</y>
-        <width>111</width>
-        <height>41</height>
+        <x>90</x>
+        <y>60</y>
+        <width>31</width>
+        <height>21</height>
        </rect>
       </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
-       <string>Copy</string>
+       <string>000</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_13">
+     <widget class="QLabel" name="label_18">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>200</y>
-        <width>231</width>
-        <height>41</height>
+        <x>190</x>
+        <y>60</y>
+        <width>31</width>
+        <height>21</height>
        </rect>
       </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="text">
-       <string>Close</string>
+       <string>000</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_19">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>20</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -602,19 +646,6 @@
       </property>
      </widget>
     </widget>
-   </widget>
-   <widget class="QPushButton" name="btn_gcp">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>10</y>
-      <width>71</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>GCP</string>
-    </property>
    </widget>
    <widget class="QMdiArea" name="mdiArea">
     <property name="geometry">
