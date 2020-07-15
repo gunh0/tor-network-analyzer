@@ -6,6 +6,8 @@ from threading import Thread
 from command import command
 from command import make_moz_cmd_list, make_tbb_cmd_list, make_copy_cmd_list, cmd_cmd_list, exit_cmd_list, watch_cmd_list
 
+import file_open_easygui as fopen
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import uic
 
@@ -61,11 +63,18 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
         super().__init__()
         self.setupUi(self)
 
-        self.pBtn100_collect.setCheckable(True)
+        # 100 Tab Func.
         self.pBtn100_collect.clicked.connect(self.pBtn100_collect_function)
-        self.pBtn100_cmd.setCheckable(True)
         self.pBtn100_cmd.clicked.connect(self.pBtn100_cmd_function)
 
+        # 200 Tab Func.
+        self.pBtn200_watch.setEnabled(False)
+
+        # GCP Tab Func.
+        self.gcp_ipListPath.setText(
+            "D:\\Tor_CIFS_300\\Source\\data\\ipList.txt")
+
+    # Share
     ip_list = []
     cmd_list = []
     gyooqueue = Queue()
@@ -73,7 +82,6 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
 
     def pBtn100_collect_function(self):
         print("100 Collect Pressed")
-        self.pBtn100_collect.setEnabled(False)
 
         self.ip_list = []
         start_ip_host = int(self.sip1004.text())
@@ -84,11 +92,8 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
             self.ip_list.append(input_ip)
         print("IP List: ", self.ip_list)
 
-        self.pBtn100_collect.setEnabled(True)
-
     def pBtn100_cmd_function(self):
         print("100 CMD Sending Pressed")
-        self.pBtn100_cmd.setEnabled(False)
 
         self.ip_list = []
         start_ip_host = int(self.sip1004.text())
@@ -118,7 +123,7 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
         for t in self.thread_list:
             t.join()
 
-        self.pBtn100_cmd.setEnabled(True)
+        print("100 CMD Sending Finish")
 
 
 # QApplication : Run App
