@@ -11,6 +11,8 @@ import file_open_easygui as fopen
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import uic
 
+from tkinter import Tk, Listbox, Label
+
 # import .ui file
 # .ui file must be located in the same directory as the Python code file.
 form_class = uic.loadUiType("CC_Server_GUI.ui")[0]
@@ -64,10 +66,12 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
         self.setupUi(self)
 
         # 100 Tab Func.
+        self.pBtnSet100ip.clicked.connect(self.pBtnSet100ip_function)
         self.pBtn100_collect.clicked.connect(self.pBtn100_collect_function)
         self.pBtn100_cmd.clicked.connect(self.pBtn100_cmd_function)
 
         # 200 Tab Func.
+        self.pBtnSet200ip.clicked.connect(self.pBtnSet200ip_function)
         self.pBtn200_watch.setEnabled(False)
 
         # GCP Tab Func.
@@ -77,13 +81,13 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
     # Share
     ip_list = []
     cmd_list = []
-    gyooqueue = Queue()
+    taskQueue = Queue()
     thread_list = []
 
-    def pBtn100_collect_function(self):
-        print("100 Collect Pressed")
-
-        self.ip_list = []
+    # 100 Tab Function
+    def pBtnSet100ip_function(self):
+        print("100 IP List Set")
+        self.ip_list = []   # init. list
         start_ip_host = int(self.sip1004.text())
         last_ip_host = int(self.lip1004.text())
         for i in range(start_ip_host, last_ip_host+1):
@@ -92,39 +96,69 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
             self.ip_list.append(input_ip)
         print("IP List: ", self.ip_list)
 
+        tkWindow = Tk()
+        tkWindow.geometry("220x200")
+        tkWindow.title("IP LIST")
+        labeltxt = "Number of Collectors: "+str(len(self.ip_list))
+        tkLabel = Label(tkWindow, text=labeltxt)
+        tkLabel.pack()
+        ipListBox = Listbox(tkWindow)
+        for i in range(0, len(self.ip_list)):
+            ipListBox.insert(i+1, self.ip_list[i])
+        ipListBox.pack()
+        tkWindow.mainloop()
+
+    def pBtn100_collect_function(self):
+        print("100 Collect Pressed")
+
     def pBtn100_cmd_function(self):
         print("100 CMD Sending Pressed")
 
-        self.ip_list = []
-        start_ip_host = int(self.sip1004.text())
-        last_ip_host = int(self.lip1004.text())
-        for i in range(start_ip_host, last_ip_host+1):
-            input_ip = self.sip1001.text()+"."+self.sip1002.text()+"." + \
-                self.sip1003.text()+"."+str(i)
-            self.ip_list.append(input_ip)
-        # print("IP List: ", self.ip_list)
-
         send_command = self.cmd100.text()
         for i in self.ip_list:
+            print(i, self.ip_list[i])
             self.cmd_list.append(cmd_cmd_list(send_command))
 
         for item in self.cmd_list:
-            self.gyooqueue.put(item)
+            self.taskQueue.put(item)
 
         for ip_addr in self.ip_list:
-            t = CommandSerize9998(self.gyooqueue, ip_addr)
+            t = CommandSerize9998(self.taskQueue, ip_addr)
             t.start()
-        self.gyooqueue.join()
-        print(self.gyooqueue)
+        self.taskQueue.join()
+        print(self.taskQueue)
 
         for i in range(len(self.ip_list)):
-            self.gyooqueue.put(None)
+            self.taskQueue.put(None)
 
         for t in self.thread_list:
             t.join()
 
         print("100 CMD Sending Finish")
+        
+    # 200 Tab Function
+    def pBtnSet200ip_function(self):
+        print("200 IP List Set")
+        self.ip_list = []   # init. list
+        start_ip_host = int(self.sip2004.text())
+        last_ip_host = int(self.lip2004.text())
+        for i in range(start_ip_host, last_ip_host+1):
+            input_ip = self.sip2001.text()+"."+self.sip2002.text()+"." + \
+                self.sip2003.text()+"."+str(i)
+            self.ip_list.append(input_ip)
+        print("IP List: ", self.ip_list)
 
+        tkWindow = Tk()
+        tkWindow.geometry("220x200")
+        tkWindow.title("IP LIST")
+        labeltxt = "Number of Collectors: "+str(len(self.ip_list))
+        tkLabel = Label(tkWindow, text=labeltxt)
+        tkLabel.pack()
+        ipListBox = Listbox(tkWindow)
+        for i in range(0, len(self.ip_list)):
+            ipListBox.insert(i+1, self.ip_list[i])
+        ipListBox.pack()
+        tkWindow.mainloop()
 
 # QApplication : Run App
 app = QtWidgets.QApplication(sys.argv)

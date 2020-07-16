@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>622</width>
+    <width>620</width>
     <height>675</height>
    </rect>
   </property>
@@ -37,7 +37,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="ntc_100">
      <property name="toolTipDuration">
@@ -290,6 +290,19 @@
        <string>Send CMD</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pBtnSet100ip">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>90</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Set IP</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="ntc_200">
      <attribute name="title">
@@ -386,7 +399,7 @@
        <string>Close</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_15">
+     <widget class="QLineEdit" name="sip2003">
       <property name="geometry">
        <rect>
         <x>180</x>
@@ -415,7 +428,7 @@
        <string>000</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_16">
+     <widget class="QLineEdit" name="sip2004">
       <property name="geometry">
        <rect>
         <x>230</x>
@@ -425,7 +438,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_17">
+     <widget class="QLineEdit" name="lip2004">
       <property name="geometry">
        <rect>
         <x>230</x>
@@ -435,7 +448,7 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_18">
+     <widget class="QLineEdit" name="sip2002">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -483,7 +496,7 @@
        <string>000</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_19">
+     <widget class="QLineEdit" name="sip2001">
       <property name="geometry">
        <rect>
         <x>80</x>
@@ -539,6 +552,19 @@
        <string>Send CMD</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pBtnSet200ip">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>90</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Set IP</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="ntc_gcp">
      <attribute name="title">
@@ -562,12 +588,12 @@
        <rect>
         <x>180</x>
         <y>50</y>
-        <width>75</width>
+        <width>91</width>
         <height>23</height>
        </rect>
       </property>
       <property name="text">
-       <string>Open</string>
+       <string>Set IP (Open)</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_14">
@@ -694,7 +720,7 @@
      <widget class="QPushButton" name="pushButton_2">
       <property name="geometry">
        <rect>
-        <x>180</x>
+        <x>190</x>
         <y>130</y>
         <width>75</width>
         <height>23</height>
@@ -722,7 +748,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>622</width>
+     <width>620</width>
      <height>21</height>
     </rect>
    </property>
