@@ -1,3 +1,4 @@
+import os
 import sys
 import time
 
@@ -16,6 +17,8 @@ from tkinter import Tk, Listbox, Label
 # import .ui file
 # .ui file must be located in the same directory as the Python code file.
 form_class = uic.loadUiType("CC_Server_GUI.ui")[0]
+
+print("Running in: ", os.getcwd())
 
 
 class CommandSerize9999(Thread):
@@ -69,32 +72,42 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
         self.pBtnSet100ip.clicked.connect(self.pBtnSet100ip_function)
         self.pBtn100_collect.clicked.connect(self.pBtn100_collect_function)
         self.pBtn100_cmd.clicked.connect(self.pBtn100_cmd_function)
+        self.pBtn100_copy.clicked.connect(self.pBtn100_copy_function)
 
         # 200 Tab Func.
         self.pBtnSet200ip.clicked.connect(self.pBtnSet200ip_function)
         self.pBtn200_watch.setEnabled(False)
+        self.pBtn200_copy.clicked.connect(self.pBtn200_copy_function)
 
         # GCP Tab Func.
         self.gcp_ipListPath.setText(
             "D:\\Tor_CIFS_300\\Source\\data\\ipList.txt")
+        self.pBtnSetGCPip.clicked.connect(self.pBtnSetGCPip_function)
+        self.pBtnOpenTargetList.clicked.connect(
+            self.pBtnOpenTargetList_function)
+        self.pBtnGCP_collect.clicked.connect(self.pBtnGCP_collect_function)
+        self.pBtnGCP_watch.clicked.connect(self.pBtnGCP_watch_function)
+        self.pBtnGCP_copy.clicked.connect(self.pBtnGCP_copy_function)
 
     # Share
     ip_list = []
     cmd_list = []
-    taskQueue = Queue()
     thread_list = []
 
     # 100 Tab Function
     def pBtnSet100ip_function(self):
         print("100 IP List Set")
         self.ip_list = []   # init. list
-        start_ip_host = int(self.sip1004.text())
-        last_ip_host = int(self.lip1004.text())
-        for i in range(start_ip_host, last_ip_host+1):
-            input_ip = self.sip1001.text()+"."+self.sip1002.text()+"." + \
-                self.sip1003.text()+"."+str(i)
-            self.ip_list.append(input_ip)
-        print("IP List: ", self.ip_list)
+        try:
+            start_ip_host = int(self.sip1004.text())
+            last_ip_host = int(self.lip1004.text())
+            for i in range(start_ip_host, last_ip_host+1):
+                input_ip = self.sip1001.text()+"."+self.sip1002.text()+"." + \
+                    self.sip1003.text()+"."+str(i)
+                self.ip_list.append(input_ip)
+            print("IP List: ", self.ip_list)
+        except:
+            print("Input IP.")
 
         tkWindow = Tk()
         tkWindow.geometry("220x200")
@@ -115,8 +128,9 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
         print("100 CMD Sending Pressed")
 
         send_command = self.cmd100.text()
+        self.cmd_list = []  # init. Command List
+        self.taskQueue = Queue()  # init. Task Queue
         for i in self.ip_list:
-            print(i, self.ip_list[i])
             self.cmd_list.append(cmd_cmd_list(send_command))
 
         for item in self.cmd_list:
@@ -126,7 +140,7 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
             t = CommandSerize9998(self.taskQueue, ip_addr)
             t.start()
         self.taskQueue.join()
-        print(self.taskQueue)
+        print("Queue: ", self.taskQueue)
 
         for i in range(len(self.ip_list)):
             self.taskQueue.put(None)
@@ -135,18 +149,45 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
             t.join()
 
         print("100 CMD Sending Finish")
-        
+
+    def pBtn100_copy_function(self):
+        print("100 Copy Pressed")
+        self.cmd_list = []  # init. Command List
+        self.taskQueue = Queue()  # init. Task Queue
+        for i in self.ip_list:
+            self.cmd_list.append(make_copy_cmd_list())
+
+        for item in self.cmd_list:
+            self.taskQueue.put(item)
+
+        for ip_addr in self.ip_list:
+            t = CommandSerize9999(self.taskQueue, ip_addr)
+            t.start()
+        self.taskQueue.join()
+        print("Queue: ", self.taskQueue)
+
+        for i in range(len(self.ip_list)):
+            self.taskQueue.put(None)
+
+        for t in self.thread_list:
+            t.join()
+
+        print("100 Copy Finish")
+
     # 200 Tab Function
     def pBtnSet200ip_function(self):
         print("200 IP List Set")
         self.ip_list = []   # init. list
-        start_ip_host = int(self.sip2004.text())
-        last_ip_host = int(self.lip2004.text())
-        for i in range(start_ip_host, last_ip_host+1):
-            input_ip = self.sip2001.text()+"."+self.sip2002.text()+"." + \
-                self.sip2003.text()+"."+str(i)
-            self.ip_list.append(input_ip)
-        print("IP List: ", self.ip_list)
+        try:
+            start_ip_host = int(self.sip2004.text())
+            last_ip_host = int(self.lip2004.text())
+            for i in range(start_ip_host, last_ip_host+1):
+                input_ip = self.sip2001.text()+"."+self.sip2002.text()+"." + \
+                    self.sip2003.text()+"."+str(i)
+                self.ip_list.append(input_ip)
+            print("IP List: ", self.ip_list)
+        except:
+            print("Input IP.")
 
         tkWindow = Tk()
         tkWindow.geometry("220x200")
@@ -159,6 +200,142 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
             ipListBox.insert(i+1, self.ip_list[i])
         ipListBox.pack()
         tkWindow.mainloop()
+
+    def pBtn200_copy_function(self):
+        print("200 Copy Pressed")
+        self.cmd_list = []  # init. Command List
+        self.taskQueue = Queue()  # init. Task Queue
+        for i in self.ip_list:
+            self.cmd_list.append(make_copy_cmd_list())
+
+        for item in self.cmd_list:
+            self.taskQueue.put(item)
+
+        for ip_addr in self.ip_list:
+            t = CommandSerize9999(self.taskQueue, ip_addr)
+            t.start()
+        self.taskQueue.join()
+        print("Queue: ", self.taskQueue)
+
+        for i in range(len(self.ip_list)):
+            self.taskQueue.put(None)
+
+        for t in self.thread_list:
+            t.join()
+
+        print("200 Copy Finish")
+
+    # GCP Tab Function
+    def pBtnSetGCPip_function(self):
+        print(self.gcp_ipListPath.text())
+        try:
+            ip_text = open(self.gcp_ipListPath.text(), "r", encoding='utf8')
+        except IOError:
+            print("No File.")
+            return 0
+        self.ip_list = ip_text.read().strip().split("\n")
+        print("ip_list : \n")
+        for ip in self.ip_list:
+            print("[" + ip + "]")
+
+    def pBtnOpenTargetList_function(self):
+        print("GCP Target List Open Pressed")
+        filePath = fopen.OpenWinFileExplorer()
+        self.gcp_TargetListPath.setText(filePath)
+        print("GCP Target List Open Finish")
+
+    def pBtnGCP_collect_function(self):
+        print("GCP Collect Pressed")
+        try:
+            file_address = self.gcp_TargetListPath.text()
+            file_address = file_address.replace("\\", "/")
+            file_address = file_address.replace("//", "/")
+            file_address = file_address.replace(
+                "D:/Tor_CIFS_300/", "/home/jjangga94temp/Tor_CIFS/")
+        except:
+            print("Input Correct Target List .txt Path")
+
+        if len(self.ip_list) == 0:
+            print("IP List is empty.")
+        else:
+            for i in self.ip_list:
+                    self.cmd_list.append(make_tbb_cmd_list(file_address))
+
+            for item in self.cmd_list:
+                self.taskQueue.put(item)
+
+            for ip_addr in self.ip_list:
+                t = CommandSerize9999(self.taskQueue, ip_addr)
+                t.start()
+            self.taskQueue.join()
+            print("Queue: ", self.taskQueue)
+
+            for i in range(len(self.ip_list)):
+                self.taskQueue.put(None)
+
+            for t in self.thread_list:
+                t.join()
+
+        print("GCP Collect Finish")
+
+    def pBtnGCP_watch_function(self):
+        print("GCP Watch Pressed")
+        try:
+            file_address = self.gcp_TargetListPath.text()
+            file_address = file_address.replace("\\", "/")
+            file_address = file_address.replace("//", "/")
+            file_address = file_address.replace(
+                "D:/Tor_CIFS_300/", "/home/jjangga94temp/Tor_CIFS/")
+        except:
+            print("Input Correct Target List .txt Path")
+
+        if len(self.ip_list) == 0:
+            print("IP List is empty.")
+        else:
+            for i in self.ip_list:
+                self.cmd_list.append(watch_cmd_list(file_address))
+
+            for item in self.cmd_list:
+                self.taskQueue.put(item)
+
+            for ip_addr in self.ip_list:
+                t = CommandSerize9999(self.taskQueue, ip_addr)
+                t.start()
+            self.taskQueue.join()
+            print("Queue: ", self.taskQueue)
+
+            for i in range(len(self.ip_list)):
+                self.taskQueue.put(None)
+
+            for t in self.thread_list:
+                t.join()
+
+        print("GCP Watch Finish")
+
+    def pBtnGCP_copy_function(self):
+        print("GCP Copy Pressed")
+        self.cmd_list = []  # init. Command List
+        self.taskQueue = Queue()    # init. Task Queue
+        for i in self.ip_list:
+            self.cmd_list.append(make_copy_cmd_list())
+
+        for item in self.cmd_list:
+            self.taskQueue.put(item)
+
+        for ip_addr in self.ip_list:
+            t = CommandSerize9999(self.taskQueue, ip_addr)
+            t.start()
+        self.taskQueue.join()
+        print("Queue: ", self.taskQueue)
+
+        for i in range(len(self.ip_list)):
+            self.taskQueue.put(None)
+
+        for t in self.thread_list:
+            t.join()
+
+        print("GCP Copy Finish")
+
 
 # QApplication : Run App
 app = QtWidgets.QApplication(sys.argv)

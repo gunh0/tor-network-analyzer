@@ -13,7 +13,7 @@ def command(ip, port, command):
     try:
         client.connect((ip, int(port)))
     except socket.error:
-        print(ip,":",port," - CONNECTION ERROR")
+        print(ip, ":", port, " - CONNECTION ERROR")
         client.close()
         return
     # send some data (in this case a HTTP GET request)

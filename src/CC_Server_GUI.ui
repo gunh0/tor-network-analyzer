@@ -37,7 +37,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="ntc_100">
      <property name="toolTipDuration">
@@ -583,7 +583,7 @@
        <string>GCP PC IP List .txt File</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="pBtnSetGCPip">
       <property name="geometry">
        <rect>
         <x>180</x>
@@ -609,7 +609,7 @@
        <string>Send</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_15">
+     <widget class="QPushButton" name="pBtnGCP_watch">
       <property name="geometry">
        <rect>
         <x>290</x>
@@ -622,7 +622,7 @@
        <string>Watch</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_16">
+     <widget class="QPushButton" name="pBtnGCP_collect">
       <property name="geometry">
        <rect>
         <x>290</x>
@@ -635,7 +635,7 @@
        <string>Collect</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_17">
+     <widget class="QPushButton" name="pBtnGCP_copy">
       <property name="geometry">
        <rect>
         <x>290</x>
@@ -661,7 +661,7 @@
        <string>Close</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_11">
+     <widget class="QLineEdit" name="gcp_TargetListPath">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -717,7 +717,7 @@
        <string>Target IP</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="pBtnOpenTargetList">
       <property name="geometry">
        <rect>
         <x>190</x>
