@@ -83,20 +83,23 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
         self.gcp_ipListPath.setText(
             "D:\\Tor_CIFS_300\\Source\\data\\ipList.txt")
         self.pBtnSetGCPip.clicked.connect(self.pBtnSetGCPip_function)
-        self.pBtnOpenTargetList.clicked.connect(
-            self.pBtnOpenTargetList_function)
+        self.pBtnGCP_OpenTargetList.clicked.connect(
+            self.pBtnGCP_OpenTargetList_function)
         self.pBtnGCP_collect.clicked.connect(self.pBtnGCP_collect_function)
         self.pBtnGCP_watch.clicked.connect(self.pBtnGCP_watch_function)
         self.pBtnGCP_copy.clicked.connect(self.pBtnGCP_copy_function)
+        self.pBtnGCP_send.setEnabled(False)
+        self.pBtnGCP_close.setEnabled(False)    # for close?
 
     # Share
     ip_list = []
     cmd_list = []
     thread_list = []
+    taskQueue = Queue()
 
     # 100 Tab Function
     def pBtnSet100ip_function(self):
-        print("100 IP List Set")
+        print("100 IP List Set Buttun Pressed.")
         self.ip_list = []   # init. list
         try:
             start_ip_host = int(self.sip1004.text())
@@ -109,7 +112,7 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
         except:
             print("Input IP.")
 
-        tkWindow = Tk()
+        tkWindow = Tk()     # show IP List with Tk
         tkWindow.geometry("220x200")
         tkWindow.title("IP LIST")
         labeltxt = "Number of Collectors: "+str(len(self.ip_list))
@@ -120,9 +123,11 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
             ipListBox.insert(i+1, self.ip_list[i])
         ipListBox.pack()
         tkWindow.mainloop()
+        print("100 IP List Set Buttun Finish.")
 
     def pBtn100_collect_function(self):
         print("100 Collect Pressed")
+        print("100 Collect Finish")
 
     def pBtn100_cmd_function(self):
         print("100 CMD Sending Pressed")
@@ -189,7 +194,7 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
         except:
             print("Input IP.")
 
-        tkWindow = Tk()
+        tkWindow = Tk()     # show IP List with Tk
         tkWindow.geometry("220x200")
         tkWindow.title("IP LIST")
         labeltxt = "Number of Collectors: "+str(len(self.ip_list))
@@ -227,6 +232,11 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
 
     # GCP Tab Function
     def pBtnSetGCPip_function(self):
+        print("GCP IP List Set Buttun Pressed.")
+
+        # Load file path with easygui & Load IP List
+        filePath = fopen.OpenWinFileExplorer()
+        self.gcp_ipListPath.setText(filePath)
         print(self.gcp_ipListPath.text())
         try:
             ip_text = open(self.gcp_ipListPath.text(), "r", encoding='utf8')
@@ -234,11 +244,22 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
             print("No File.")
             return 0
         self.ip_list = ip_text.read().strip().split("\n")
-        print("ip_list : \n")
-        for ip in self.ip_list:
-            print("[" + ip + "]")
+        print("IP List: ", self.ip_list)
+        
+        tkWindow = Tk()     # show IP List with Tk
+        tkWindow.geometry("220x200")
+        tkWindow.title("IP LIST")
+        labeltxt = "Number of Collectors: "+str(len(self.ip_list))
+        tkLabel = Label(tkWindow, text=labeltxt)
+        tkLabel.pack()
+        ipListBox = Listbox(tkWindow)
+        for i in range(0, len(self.ip_list)):
+            ipListBox.insert(i+1, self.ip_list[i])
+        ipListBox.pack()
+        tkWindow.mainloop()
+        print("GCP IP List Set Buttun Finish.")
 
-    def pBtnOpenTargetList_function(self):
+    def pBtnGCP_OpenTargetList_function(self):
         print("GCP Target List Open Pressed")
         filePath = fopen.OpenWinFileExplorer()
         self.gcp_TargetListPath.setText(filePath)
