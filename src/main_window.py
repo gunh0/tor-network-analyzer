@@ -80,11 +80,9 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
         self.pBtn200_copy.clicked.connect(self.pBtn200_copy_function)
 
         # GCP Tab Func.
-        self.gcp_ipListPath.setText(
-            "D:\\Tor_CIFS_300\\Source\\data\\ipList.txt")
         self.pBtnSetGCPip.clicked.connect(self.pBtnSetGCPip_function)
         self.pBtnGCP_OpenTargetList.clicked.connect(
-            self.pBtnGCP_OpenTargetList_function)
+            self.pBtnGCP_OpenTargetList_function)   # Open Tor URL List Text
         self.pBtnGCP_collect.clicked.connect(self.pBtnGCP_collect_function)
         self.pBtnGCP_watch.clicked.connect(self.pBtnGCP_watch_function)
         self.pBtnGCP_copy.clicked.connect(self.pBtnGCP_copy_function)
@@ -255,14 +253,36 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
         ipListBox = Listbox(tkWindow)
         for i in range(0, len(self.ip_list)):
             ipListBox.insert(i+1, self.ip_list[i])
-        ipListBox.pack()
+        ipListBox.pack(side="left", fill="both", expand=True)
         tkWindow.mainloop()
         print("GCP IP List Set Buttun Finish.")
+        ip_text.close()
 
     def pBtnGCP_OpenTargetList_function(self):
         print("GCP Target List Open Pressed")
         filePath = fopen.OpenWinFileExplorer()
         self.gcp_TargetListPath.setText(filePath)
+        print(self.gcp_TargetListPath.text())
+        try:
+            url_list = []
+            with open(self.gcp_TargetListPath.text(), "r", encoding='utf8') as f:
+                for line in f:
+                    url_list.append(line)
+            print(url_list)
+            tkURLWindow = Tk()     # show IP List with Tk
+            tkURLWindow.geometry("320x300")
+            tkURLWindow.title("URL LIST")
+            labeltxt = "Number of Collectors: "+str(len(url_list))
+            tkLabel = Label(tkURLWindow, text=labeltxt)
+            tkLabel.pack()
+            urlListBox = Listbox(tkURLWindow)
+            for i in range(0, len(url_list)):
+                urlListBox.insert(i+1, url_list[i])
+            urlListBox.pack(side="left", fill="both", expand=True)
+            tkURLWindow.mainloop()
+        except IOError:
+            print("No File.")
+            return 0
         print("GCP Target List Open Finish")
 
     def pBtnGCP_collect_function(self):
