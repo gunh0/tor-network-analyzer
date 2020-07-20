@@ -83,6 +83,7 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
         self.pBtnSetGCPip.clicked.connect(self.pBtnSetGCPip_function)
         self.pBtnGCP_OpenTargetList.clicked.connect(
             self.pBtnGCP_OpenTargetList_function)   # Open Tor URL List Text
+        self.pBtnGCP_cmd.clicked.connect(self.pBtnGCP_cmd_function)
         self.pBtnGCP_collect.clicked.connect(self.pBtnGCP_collect_function)
         self.pBtnGCP_watch.clicked.connect(self.pBtnGCP_watch_function)
         self.pBtnGCP_copy.clicked.connect(self.pBtnGCP_copy_function)
@@ -123,7 +124,7 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
         tkWindow.mainloop()
         print("100 IP List Set Buttun Finish.")
 
-    def pBtn100_collect_function(self):
+    def pBtn100_collect_function(self):     # NOT IMPLEMENTED!!!
         print("100 Collect Pressed")
         print("100 Collect Finish")
 
@@ -284,6 +285,12 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
             print("No File.")
             return 0
         print("GCP Target List Open Finish")
+
+    def pBtnGCP_cmd_function(self):
+        print("GCP CMD Sending Pressed")
+        send_command = self.cmdGCP.text()
+        print(send_command)
+        print("GCP CMD Sending Finish")
 
     def pBtnGCP_collect_function(self):
         print("GCP Collect Pressed")

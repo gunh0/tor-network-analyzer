@@ -746,7 +746,7 @@
        <string>Open</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pBtnGCP_cmd_2">
+     <widget class="QPushButton" name="pBtnGCP_cmd">
       <property name="geometry">
        <rect>
         <x>180</x>
