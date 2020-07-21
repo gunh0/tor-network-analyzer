@@ -289,7 +289,27 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
     def pBtnGCP_cmd_function(self):
         print("GCP CMD Sending Pressed")
         send_command = self.cmdGCP.text()
-        print(send_command)
+        print("Your Command: ",send_command)
+        
+        self.cmd_list = []  # init. Command List
+        self.taskQueue = Queue()  # init. Task Queue
+        for i in self.ip_list:
+            self.cmd_list.append(cmd_cmd_list(send_command))
+
+        for item in self.cmd_list:
+            self.taskQueue.put(item)
+
+        for ip_addr in self.ip_list:
+            t = CommandSerize9998(self.taskQueue, ip_addr)
+            t.start()
+        self.taskQueue.join()
+        print("Queue: ", self.taskQueue)
+
+        for i in range(len(self.ip_list)):
+            self.taskQueue.put(None)
+
+        for t in self.thread_list:
+            t.join()
         print("GCP CMD Sending Finish")
 
     def pBtnGCP_collect_function(self):
