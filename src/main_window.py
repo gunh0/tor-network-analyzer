@@ -290,7 +290,6 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
         print("GCP CMD Sending Pressed")
         send_command = self.cmdGCP.text()
         print("Your Command: ",send_command)
-        
         self.cmd_list = []  # init. Command List
         self.taskQueue = Queue()  # init. Task Queue
         for i in self.ip_list:

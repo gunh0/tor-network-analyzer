@@ -17,5 +17,19 @@ pyuic5 -x input.ui -o mian.py
 ### pyinstaller
 
 ```
-pyinstaller --clean --onefile --noconsole main_window.py
+# pyinstaller --clean --onefile --noconsole --icon=icon/icon.ico
+pyinstaller --clean --onefile --icon=icon/icon.ico main_window.py
 ```
+
+```
+a = Analysis(['main_window.py'],
+             pathex=[],
+             binaries=[],
+             datas=[('CC_Server_GUI.ui', '.')],
+             ...
+```
+
+```
+pyinstaller --clean --onefile --icon=icon/icon.ico main_window.spec
+```
+
