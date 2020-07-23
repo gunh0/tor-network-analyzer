@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>620</width>
-    <height>680</height>
+    <width>623</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -784,15 +784,133 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QMdiArea" name="mdiArea">
+   <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>370</y>
+      <y>360</y>
       <width>541</width>
-      <height>261</height>
+      <height>281</height>
      </rect>
     </property>
+    <property name="title">
+     <string>Instance Controller</string>
+    </property>
+    <widget class="QPushButton" name="InCtl_btnConnect">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>60</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Connect</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>100</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Send CMD</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>501</width>
+       <height>111</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="InCtl_ipInput">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="InCtl_cmd">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>231</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="InCtl_user">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>30</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="InCtl_pw">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>60</y>
+       <width>113</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>56</width>
+       <height>12</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Target IP</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>30</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>User</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>60</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PW</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -800,7 +918,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>620</width>
+     <width>623</width>
      <height>21</height>
     </rect>
    </property>
