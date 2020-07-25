@@ -299,7 +299,8 @@ class WindowClass(QtWidgets.QMainWindow, form_class):   # GUI Class Define
             self.taskQueue.put(item)
 
         for ip_addr in self.ip_list:
-            t = CommandSerize9998(self.taskQueue, ip_addr)
+            # t = CommandSerize9998(self.taskQueue, ip_addr)
+            t = CommandSerize9999(self.taskQueue, ip_addr)
             t.start()
         self.taskQueue.join()
         print("Queue: ", self.taskQueue)
