@@ -104,7 +104,3 @@ The web interface provides:
 - 🔄 **Auto-refresh** functionality
 - 📱 **Responsive design** for all devices
 - 📅 **Historical Data** from previous analyses
-
-## License
-
-This project is for educational and research purposes only. Use responsibly and in accordance with local laws.
