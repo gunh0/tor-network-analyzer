@@ -1,0 +1,166 @@
+{
+  "timestamp": "2025-08-01T08:57:02.401982",
+  "tor_connectivity": true,
+  "tor_exit_ip": "37.228.129.5",
+  "summary": {
+    "total_sites": 4,
+    "successful": 2,
+    "success_rate": 50.0
+  },
+  "results": [
+    {
+      "success": true,
+      "url": "https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/",
+      "status_code": 200,
+      "title": "DuckDuckGo - Protection. Privacy. Peace of mind.",
+      "content_length": 63681,
+      "response_headers": {
+        "Server": "nginx",
+        "Date": "Thu, 31 Jul 2025 23:56:51 GMT",
+        "Content-Type": "text/html; charset=UTF-8",
+        "Content-Length": "16544",
+        "Connection": "keep-alive",
+        "Vary": "Accept-Encoding",
+        "ETag": "\"688bf962-40a0\"",
+        "Content-Encoding": "gzip",
+        "Strict-Transport-Security": "max-age=0",
+        "Permissions-Policy": "interest-cohort=()",
+        "Content-Security-Policy": "default-src 'none' ; connect-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; manifest-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; media-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; script-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' 'unsafe-eval' ; font-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; img-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; style-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' ; object-src 'none' ; worker-src blob: ; child-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; form-action  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-ancestors 'self' https://html.duckduckgo.com; base-uri 'self' ; block-all-mixed-content ;",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-XSS-Protection": "1;mode=block",
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "origin",
+        "Expect-CT": "max-age=0",
+        "Expires": "Thu, 31 Jul 2025 23:56:50 GMT",
+        "Cache-Control": "no-cache"
+      },
+      "error": null,
+      "server_info": "nginx",
+      "response_time": 1.69,
+      "address": "https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/",
+      "onion_analysis": {
+        "onion_address": "duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion",
+        "address_length": 56,
+        "is_v3_onion": true,
+        "is_v2_onion": false,
+        "protocol": "https",
+        "path": "/",
+        "has_subdomain": false,
+        "address_hash": "1c65bba6698c1e4a"
+      },
+      "security_analysis": {
+        "https_enabled": true,
+        "security_headers": {
+          "Strict-Transport-Security": "max-age=0",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff",
+          "Content-Security-Policy": "default-src 'none' ; connect-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; manifest-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; media-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; script-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' 'unsafe-eval' ; font-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; img-src data:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; style-src  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com 'unsafe-inline' ; object-src 'none' ; worker-src blob: ; child-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-src blob:  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; form-action  https://duckduckgo.com https://*.duckduckgo.com https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/ https://spreadprivacy.com ; frame-ancestors 'self' https://html.duckduckgo.com; base-uri 'self' ; block-all-mixed-content ;",
+          "X-XSS-Protection": "1;mode=block"
+        },
+        "potential_vulnerabilities": [],
+        "anonymity_score": 90
+      }
+    },
+    {
+      "success": false,
+      "url": "https://facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion/",
+      "status_code": 400,
+      "title": null,
+      "content_length": 1542,
+      "response_headers": {
+        "Content-Encoding": "zstd",
+        "Pragma": "no-cache",
+        "Cache-Control": "private, no-cache, no-store, must-revalidate",
+        "Expires": "Sat, 01 Jan 2000 00:00:00 GMT",
+        "content-security-policy": "default-src https://*.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion https://*.facebookcooa4ldbat4g7iacswl3p2zrf5nuylvnhxn6kqolvojixwid.onion https://*.facebooksg4bc7ddneq44pf4miux7o7oqdn2agstg5v3d45odhyu4sqd.onion blob: 'self';script-src https://*.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion https://*.facebookcooa4ldbat4g7iacswl3p2zrf5nuylvnhxn6kqolvojixwid.onion *.facebook.net 127.0.0.1:* 'nonce-2GviEUNV' blob: 'self' connect.facebook.net 'unsafe-eval' https://*.google-analytics.com *.google.com;style-src 'unsafe-inline' 'self' https://*.facebookcooa4ldbat4g7iacswl3p2zrf5nuylvnhxn6kqolvojixwid.onion https://*.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion data: https://fonts.googleapis.com;connect-src https://*.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion https://facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion https://*.facebookcooa4ldbat4g7iacswl3p2zrf5nuylvnhxn6kqolvojixwid.onion wss://*.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion:* wss://*.facebookcooa4ldbat4g7iacswl3p2zrf5nuylvnhxn6kqolvojixwid.onion https://attachment.facebooksg4bc7ddneq44pf4miux7o7oqdn2agstg5v3d45odhyu4sqd.onion *.facebook.net wss://*.whatsapp.com:* ws://localhost:* blob: *.cdninstagram.com 'self' http://localhost:3103 v.whatsapp.net *.fb.com https://*.google-analytics.com;font-src https://*.facebookcooa4ldbat4g7iacswl3p2zrf5nuylvnhxn6kqolvojixwid.onion https://*.facebooksg4bc7ddneq44pf4miux7o7oqdn2agstg5v3d45odhyu4sqd.onion https://*.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion data: https://fonts.gstatic.com;img-src https://*.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion https://*.facebookcooa4ldbat4g7iacswl3p2zrf5nuylvnhxn6kqolvojixwid.onion https://*.facebooksg4bc7ddneq44pf4miux7o7oqdn2agstg5v3d45odhyu4sqd.onion https://facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion https://facebooksg4bc7ddneq44pf4miux7o7oqdn2agstg5v3d45odhyu4sqd.onion https://facebookcooa4ldbat4g7iacswl3p2zrf5nuylvnhxn6kqolvojixwid.onion data: *.cdninstagram.com connect.facebook.net *.carriersignal.info blob: android-webview-video-poster: *.whatsapp.net *.fb.com *.oculuscdn.com *.tenor.co *.tenor.com *.giphy.com https://trustly.one/ https://*.trustly.one/ https://paywithmybank.com/ https://*.paywithmybank.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://*.google-analytics.com;media-src https://*.facebookcooa4ldbat4g7iacswl3p2zrf5nuylvnhxn6kqolvojixwid.onion https://*.facebooksg4bc7ddneq44pf4miux7o7oqdn2agstg5v3d45odhyu4sqd.onion https://*.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion https://www.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion *.cdninstagram.com blob: data: *.tenor.co *.tenor.com https://*.giphy.com;child-src https://*.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion https://*.facebookcooa4ldbat4g7iacswl3p2zrf5nuylvnhxn6kqolvojixwid.onion https://*.facebooksg4bc7ddneq44pf4miux7o7oqdn2agstg5v3d45odhyu4sqd.onion data: blob: 'self';frame-src https://*.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion https://*.facebooksg4bc7ddneq44pf4miux7o7oqdn2agstg5v3d45odhyu4sqd.onion https://facebooksg4bc7ddneq44pf4miux7o7oqdn2agstg5v3d45odhyu4sqd.onion https://*.facebookcooa4ldbat4g7iacswl3p2zrf5nuylvnhxn6kqolvojixwid.onion data: www.instagram.com accounts.meta.com *.accounts.meta.com https://trustly.one/ https://*.trustly.one/ https://paywithmybank.com/ https://*.paywithmybank.com/ https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://td.doubleclick.net *.google.com *.doubleclick.net;manifest-src https://*.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion https://*.facebookcooa4ldbat4g7iacswl3p2zrf5nuylvnhxn6kqolvojixwid.onion https://*.facebooksg4bc7ddneq44pf4miux7o7oqdn2agstg5v3d45odhyu4sqd.onion data: blob: 'self';object-src https://*.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion https://*.facebookcooa4ldbat4g7iacswl3p2zrf5nuylvnhxn6kqolvojixwid.onion https://*.facebooksg4bc7ddneq44pf4miux7o7oqdn2agstg5v3d45odhyu4sqd.onion data: blob: 'self';worker-src https://*.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion blob: data:;block-all-mixed-content;upgrade-insecure-requests;",
+        "document-policy": "include-js-call-stacks-in-crash-reports",
+        "X-Frame-Options": "DENY",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "reporting-endpoints": "coop_report=\"https://www.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion/browser_reporting/coop/?minimize=0\", default=\"https://www.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion/ajax/browser_error_reports/?device_level=unknown&brsid=7533399344891782187&cpp=C3&cv=1025379780&st=1754006218620\"",
+        "report-to": "{\"max_age\":2592000,\"endpoints\":[{\"url\":\"https:\\/\\/www.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion\\/browser_reporting\\/coop\\/?minimize=0\"}],\"group\":\"coop_report\",\"include_subdomains\":true}, {\"max_age\":259200,\"endpoints\":[{\"url\":\"https:\\/\\/www.facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion\\/ajax\\/browser_error_reports\\/?device_level=unknown&brsid=7533399344891782187&cpp=C3&cv=1025379780&st=1754006218620\"}]}",
+        "cross-origin-opener-policy": "same-origin-allow-popups",
+        "Vary": "Sec-Fetch-Site, Sec-Fetch-Mode, Accept-Encoding",
+        "origin-agent-cluster": "?1",
+        "Strict-Transport-Security": "max-age=15552000; preload",
+        "Content-Type": "text/html; charset=\"utf-8\"",
+        "X-FB-Debug": "RmAJweGbfub/HWtVP0AC3pv3jKdc6nFIf6+sM+rfl0c6BqGr4yUzQFep67PjhvDiD4GXFEONM/RZ8SeQenWUCw==",
+        "Date": "Thu, 31 Jul 2025 23:56:58 GMT",
+        "X-FB-Connection-Quality": "EXCELLENT; q=0.9, rtt=37, rtx=0, c=10, mss=1380, tbw=3704781, tp=-1, tpl=-1, uplat=31, ullat=0",
+        "Alt-Svc": "h3=\":443\"; ma=86400",
+        "Proxy-Status": "http_request_error; e_fb_vipaddr=\"AcONNHzPvSew27-ODnTp_pZiqzcZHFaNJiYh6b__6hqnfDMbyTo2v03b7xbAMCCMMCkq9RlwLWAO4ma43ij7UryhtuELPJLZ\"; e_clientaddr=\"AcOwISKAzccre6XTCiYbdyWwBoeTvmsYzHs-1GNqsf8c2WB--GW69F0KlnJGQOe0TEF4xZLBsJb7dHPKoUIW2VdJ79zO-fRflVURTptQc9__O1Kirw\"; e_upip=\"AcMSbnNVBW80ejFlGsoLyCuPsuzuWC8_A63QqGF0t-hfWbuVcFUux68lvME0f0KZw4yIBhiNVYeHW-_4ElfGkUKnh3nYtQPkSC5C\"; e_fb_zone=\"AcNP1n19v5uUznrj6QWYbHEETVZ5MQAkIzouxoFrq-ai1OViKnM_AQ-77CSGwm7x\"; e_fb_twtaskhandle=\"AcM4X0uQN4P_uVm4OJ4NXjPXcaLgm0K5wRC02uJENewALl7WjckuIYAH2fooOEWS9ggQB-Ye-YBNtsCKf2sd7sOQsRizGWd3cl5OiXBERPQtdP4\"; e_proxy=\"AcNDnI01J_4EwfkRtF-u_o7icOG7e2trFShEZCvW-OiUHlGTY_REboVj_MMhSjZW6MYCkfIpnnkeGvnutCqr\", http_request_error; e_fb_vipaddr=\"AcNhrmTW16JxNRXCXqHN7l-bzEl5hYD7-hg3yzDNXwF3IUn60bJ9SuHUzIbEwk8xoXHGroJSLT5W1h-3haBO2lZNt2lxjERB\"; e_clientaddr=\"AcPCF5erwHXQuFwd8uku3U_yKlY4nc5KOFP3X2FCknasugvG07LjB7968N-4YFTNt4wuhY6bBrn6ZEVyeAptW4g3eWOP6BNXbl5wvM-rncyaH2onHw\"; e_upip=\"AcOVUbccqViIM4n6vdUubd4fLYQKMvyjv6ELEaYa-7c4tbxn342Eo0W4EY_mCQFAbfyGSlWS3LrlzWevMH7YZQmZwWsxDtN8\"; e_fb_zone=\"AcMfTORcPhmXo_cGJxoeCQKt7SjyRGFtZE_uxQYcd8J1RIaXn5FZah8O22nC5Q\"; e_fb_twtaskhandle=\"AcNcMfUCh23ADhHGLjHaiT3fBAvPQhii9ScoMjYkiN-BfDizJJgCx3YB76w7n1cZ7cgjOnct6BUZ5c8fQR3XRGsVYm-vUy30wZ0\"; e_proxy=\"AcPILw-z3YACNY1N5HNFyCQ44ODmSKeo-x1oaSaXWupH4Z00r6Xl8NOr5lagg-nNPHYWJM01i-hhp9o\", http_request_error; e_fb_vipaddr=\"AcPYoYsDnQqQcLncgL-KpSkVkFzJjZAdN8y1XbIojvvXYKnRYlnZHe4FdDAVDED-ArzN0HZej8QvGRlf1plhrbUEhrrZw0zoqJPd6N2Y\"; e_clientaddr=\"AcMw3GerIUkkuVFzALnUujGUNmaoZMMAh4RE2dnraE0_FZz3W6rJIuMY96FmwWPVM1PY2Rb1g6vFE2KXxICbMCNSKa_FyZPtcqEjSlybGXkdJhc4\"; e_upip=\"AcMAi-bE48zEfteKAK5RifOy4BKLlCgdbhIZrjjiIvxkQ-BYfTLCka2OHTkkzmWzSuobjBomt488DhanYAqJG3tf7Kxoy6IV\"; e_fb_zone=\"AcPeMc3Dd4UrSiD0h-KAoIXhi_u7Iy6AULua19B2vdXFQHeV1CvzqY5uz-b4KA2F\"; e_fb_twtaskhandle=\"AcPXZ0BIKv-nV1OJ0c9Ykvss5rMS0Y1u-eEe4NcxiPrjbhm0OdygDfhp-GGFZRqV2znRVSvYOcFw87jYOHoepPGPC4Uv5NI3TcbUi7w\"; e_proxy=\"AcPskgqvI5doS2yb-g99t-mEXh57iRhh094ecz2U7-HJ65FH99eRONNhLYL9x-UNdPxVG4MUi9NPsyvEff2l\"",
+        "Connection": "keep-alive",
+        "Content-Length": "857"
+      },
+      "error": "HTTP 400",
+      "server_info": null,
+      "response_time": 7.5,
+      "address": "https://facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion/",
+      "onion_analysis": {
+        "onion_address": "facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion",
+        "address_length": 56,
+        "is_v3_onion": true,
+        "is_v2_onion": false,
+        "protocol": "https",
+        "path": "/",
+        "has_subdomain": false,
+        "address_hash": "8190b561aaacce1e"
+      }
+    },
+    {
+      "success": true,
+      "url": "http://pericouymgycnd5l5enyjaxrknsrf2jg6noygaqhibqs2zv6cyzmpwad.onion/",
+      "status_code": 200,
+      "title": "AlphaBay Market v2",
+      "content_length": 61015,
+      "response_headers": {
+        "Date": "Thu, 31 Jul 2025 23:57:00 GMT",
+        "Server": "Apache",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Link": "<http://pericouymgycnd5l5enyjaxrknsrf2jg6noygaqhibqs2zv6cyzmpwad.onion/index.php?rest_route=/>; rel=\"https://api.w.org/\"",
+        "Upgrade": "h2",
+        "Connection": "Upgrade, close",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "Content-Length": "12647",
+        "Content-Type": "text/html; charset=UTF-8"
+      },
+      "error": null,
+      "server_info": "Apache",
+      "response_time": 2.89,
+      "address": "http://pericouymgycnd5l5enyjaxrknsrf2jg6noygaqhibqs2zv6cyzmpwad.onion/",
+      "onion_analysis": {
+        "onion_address": "pericouymgycnd5l5enyjaxrknsrf2jg6noygaqhibqs2zv6cyzmpwad.onion",
+        "address_length": 56,
+        "is_v3_onion": true,
+        "is_v2_onion": false,
+        "protocol": "http",
+        "path": "/",
+        "has_subdomain": false,
+        "address_hash": "c06fe9c1e9e85e85"
+      },
+      "security_analysis": {
+        "https_enabled": false,
+        "security_headers": {
+          "X-Frame-Options": "SAMEORIGIN"
+        },
+        "potential_vulnerabilities": [],
+        "anonymity_score": 50
+      }
+    },
+    {
+      "circuit_analysis": {
+        "unique_exit_ips": 3,
+        "total_tests": 3,
+        "successful_tests": 3,
+        "exit_ips": [
+          "37.228.129.5",
+          "192.42.116.195",
+          "45.84.107.17"
+        ],
+        "circuit_diversity_score": 1.0
+      },
+      "type": "circuit_diversity"
+    }
+  ]
+}

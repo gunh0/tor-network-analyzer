@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tor Network Analysis Results</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #4a5568;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .header p {
+            color: #718096;
+            font-size: 1.1em;
+        }
+
+        .refresh-btn {
+            background: #4299e1;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .refresh-btn:hover {
+            background: #3182ce;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(66, 153, 225, 0.4);
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .analysis-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .analysis-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .analysis-card h3 {
+            color: #4a5568;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+            font-size: 1.3em;
+        }
+
+        .analysis-details {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .analysis-details strong {
+            color: #2d3748;
+        }
+
+        .charts-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .charts-section h2 {
+            color: #4a5568;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .chart-container {
+            text-align: center;
+        }
+
+        .chart-container h4 {
+            color: #4a5568;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .chart-container img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .loading {
+            text-align: center;
+            color: #718096;
+            font-style: italic;
+            padding: 50px;
+        }
+
+        .timestamp {
+            color: #a0aec0;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Tor Network Analysis Results</h1>
+            <p>Real-time analysis of .onion sites accessibility and performance</p>
+            <button class="refresh-btn" onclick="loadAnalysisData()">🔄 Refresh Data</button>
+        </div>
+
+        <div id="analysisContainer" class="analysis-grid">
+            <div class="loading">Loading analysis results...</div>
+        </div>
+
+        <div class="charts-section">
+            <h2>📊 Analysis Charts & Visualizations</h2>
+            <div id="chartsContainer" class="charts-grid">
+                <div class="loading">Loading charts...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadAnalysisData() {
+            try {
+                // Check if we're running through HTTP server or file:// protocol
+                const isFileProtocol = window.location.protocol === 'file:';
+                
+                if (isFileProtocol) {
+                    // For file:// protocol, show instructions to run server
+                    document.getElementById('analysisContainer').innerHTML = `
+                        <div class="analysis-card" style="grid-column: 1 / -1;">
+                            <h3>🚀 Server Required</h3>
+                            <div class="analysis-details">
+                                <p><strong>To view analysis results, please start the server:</strong></p>
+                                <br>
+                                <p>1. Open terminal and navigate to the results directory:</p>
+                                <code style="background: #f7fafc; padding: 10px; border-radius: 5px; display: block; margin: 10px 0;">
+                                    cd /Users/devgun/Code/gunh0_github-private/Tor-Anonymous_Network_Analysis/results
+                                </code>
+                                <p>2. Start the server:</p>
+                                <code style="background: #f7fafc; padding: 10px; border-radius: 5px; display: block; margin: 10px 0;">
+                                    python3 server.py 8080
+                                </code>
+                                <p>3. Open <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> in your browser</p>
+                                <br>
+                                <p style="color: #718096; font-style: italic;">
+                                    Or use Docker: <code>make viewer</code>
+                                </p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.getElementById('chartsContainer').innerHTML = `
+                        <div class="loading">Start the server to view charts and analysis data</div>
+                    `;
+                    return;
+                }
+                
+                // Get list of files from API
+                const response = await fetch('/api/files');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch file list');
+                }
+                
+                const fileData = await response.json();
+                console.log('Loaded file data:', fileData);
+                
+                // Display analysis cards
+                await displayAnalysisCards(fileData.files);
+                
+                // Display charts
+                displayCharts(fileData.files);
+                
+            } catch (error) {
+                console.error('Error loading analysis data:', error);
+                document.getElementById('analysisContainer').innerHTML = 
+                    '<div class="loading">Error loading data. Please start the server to view results.</div>';
+                document.getElementById('chartsContainer').innerHTML = 
+                    '<div class="loading">Error loading charts.</div>';
+            }
+        }
+        
+        async function displayAnalysisCards(filesData) {
+            const container = document.getElementById('analysisContainer');
+            const timestamps = Object.keys(filesData);
+            
+            if (timestamps.length === 0) {
+                container.innerHTML = '<div class="loading">No analysis results found.</div>';
+                return;
+            }
+            
+            const cards = [];
+            
+            for (const timestamp of timestamps) {
+                try {
+                    const response = await fetch(`/api/data/${timestamp}`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        const formatTimestamp = timestamp.replace(/(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})/, '$1-$2-$3 $4:$5:$6');
+                        
+                        // Extract data from the correct structure
+                        const summary = data.summary || {};
+                        const results = data.results || [];
+                        
+                        // Calculate additional statistics
+                        const responseTimes = results
+                            .filter(r => r.success && r.response_time)
+                            .map(r => r.response_time);
+                        
+                        const avgResponseTime = responseTimes.length > 0 
+                            ? (responseTimes.reduce((a, b) => a + b, 0) / responseTimes.length).toFixed(2)
+                            : 'N/A';
+                            
+                        const fastestSite = responseTimes.length > 0
+                            ? results.find(r => r.response_time === Math.min(...responseTimes))?.url?.split('/')[2] || 'N/A'
+                            : 'N/A';
+                            
+                        const slowestSite = responseTimes.length > 0
+                            ? results.find(r => r.response_time === Math.max(...responseTimes))?.url?.split('/')[2] || 'N/A'
+                            : 'N/A';
+                        
+                        cards.push(`
+                            <div class="analysis-card">
+                                <h3>Analysis Report</h3>
+                                <div class="analysis-details">
+                                    <p><strong>Total Sites Analyzed:</strong> ${summary.total_sites || 'N/A'}</p>
+                                    <p><strong>Successful Connections:</strong> ${summary.successful || 'N/A'}</p>
+                                    <p><strong>Success Rate:</strong> ${summary.success_rate ? summary.success_rate.toFixed(2) + '%' : 'N/A'}</p>
+                                    <p><strong>Average Response Time:</strong> ${avgResponseTime}ms</p>
+                                    <p><strong>Fastest Site:</strong> ${fastestSite}</p>
+                                    <p><strong>Slowest Site:</strong> ${slowestSite}</p>
+                                    <p><strong>Tor Exit IP:</strong> ${data.tor_exit_ip || 'N/A'}</p>
+                                    <div class="timestamp">📅 ${formatTimestamp}</div>
+                                </div>
+                            </div>
+                        `);
+                    }
+                } catch (error) {
+                    console.error(`Error loading data for ${timestamp}:`, error);
+                }
+            }
+            
+            if (cards.length === 0) {
+                container.innerHTML = '<div class="loading">No valid analysis data found.</div>';
+            } else {
+                container.innerHTML = cards.join('');
+            }
+        }
+        
+        function displayCharts(filesData) {
+            const container = document.getElementById('chartsContainer');
+            const timestamps = Object.keys(filesData);
+            
+            if (timestamps.length === 0) {
+                container.innerHTML = '<div class="loading">No charts available.</div>';
+                return;
+            }
+            
+            const allCharts = [];
+            
+            // Show charts for all analyses (up to 10 most recent)
+            const recentTimestamps = timestamps.slice(0, 10);
+            
+            recentTimestamps.forEach((timestamp, index) => {
+                const files = filesData[timestamp].files;
+                const formatTimestamp = timestamp.replace(/(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})/, '$1-$2-$3 $4:$5');
+                
+                if (files.response_times_chart || files.success_rate_chart) {
+                    allCharts.push(`
+                        <div class="chart-section" style="grid-column: 1 / -1; margin-bottom: 30px;">
+                            <h3 style="color: #4a5568; margin-bottom: 20px; text-align: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px;">
+                                📊 Analysis Results - ${formatTimestamp}
+                            </h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px;">
+                                ${files.response_times_chart ? `
+                                    <div class="chart-container">
+                                        <h4>📈 Response Times</h4>
+                                        <img src="${files.response_times_chart}" 
+                                             alt="Response Times Chart" 
+                                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                        <div style="display:none; color: #a0aec0; font-style: italic;">Chart not available</div>
+                                    </div>
+                                ` : ''}
+                                
+                                ${files.success_rate_chart ? `
+                                    <div class="chart-container">
+                                        <h4>✅ Success Rate</h4>
+                                        <img src="${files.success_rate_chart}" 
+                                             alt="Success Rate Chart"
+                                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                        <div style="display:none; color: #a0aec0; font-style: italic;">Chart not available</div>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    `);
+                }
+            });
+            
+            if (allCharts.length === 0) {
+                container.innerHTML = '<div class="loading">No charts available for any analysis.</div>';
+            } else {
+                container.innerHTML = allCharts.join('');
+            }
+        }
+        
+        // Load data when page loads
+        document.addEventListener('DOMContentLoaded', loadAnalysisData);
+        
+        // Auto-refresh every 30 seconds
+        setInterval(loadAnalysisData, 30000);
+    </script>
+</body>
+
+</html>

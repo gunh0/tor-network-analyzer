@@ -1,0 +1,31 @@
+============================================================
+TOR NETWORK ANALYSIS REPORT
+============================================================
+Generated: 2025-08-01 08:57:02
+
+SUMMARY
+--------------------
+Total Sites: 4
+Successful: 2
+Success Rate: 50.0%
+Tor Status: CONNECTED
+Exit IP: 37.228.129.5
+
+DETAILED RESULTS
+--------------------
+
+1. https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+   ✓ SUCCESS - DuckDuckGo - Protection. Privacy. Peace of mind.
+   Status: 200
+   Size: 63681 bytes
+
+2. https://facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion/
+   ✗ FAILED - HTTP 400
+
+3. http://pericouymgycnd5l5enyjaxrknsrf2jg6noygaqhibqs2zv6cyzmpwad.onion/
+   ✓ SUCCESS - AlphaBay Market v2
+   Status: 200
+   Size: 61015 bytes
+
+4. Unknown
+   ✗ FAILED - Unknown error

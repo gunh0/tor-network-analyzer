@@ -1,10 +1,56 @@
-http://bayfilesittwudwh.onion
-http://sblib3fk2gryb46d.onion
-http://rutorc6mqdinc4cz.onion
-http://r5n26fdanb4i522h.onion
-http://galaxy2gchufcb3z.onion
-http://hackerjmg3hofjpr.onion
-http://poisonj7bdow2nw7.onion
-http://f6pxr3iqw7iziuc2.onion
-http://hupx37mjmbzzw3ja.onion
-http://bestshop3neaglxk.onion
+# Tor Hidden Service Test URLs - Comprehensive Collection
+# Updated: 2025-08-01
+
+# Search Engines
+https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+https://3g2upl4pq6kufc4m.onion/
+
+# Social Media & Communication
+https://facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion/
+https://www.facebookcorewwwi.onion/
+
+# News & Media
+https://www.nytimes3xbfgragh.onion/
+https://www.propub3r6espa33w.onion/
+https://www.washingtonpost.com/securedrop/
+https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+
+# Wikimedia Projects
+https://www.facebookcorewwwi.onion/
+
+# Privacy & Security Tools
+https://securedrop.org/
+https://www.torproject.org/
+
+# Directories & Indexes
+http://pericouymgycnd5l5enyjaxrknsrf2jg6noygaqhibqs2zv6cyzmpwad.onion/
+http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion/
+
+# Email Services
+https://protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion/
+https://mail.protonmail.com/
+
+# File Sharing & Storage
+https://www.facebookcorewwwi.onion/
+
+# Cryptocurrency & Finance
+https://blockchainbdgpzk.onion/
+
+# Forums & Communities
+http://dreadditevelidot.onion/
+http://www.facebookcorewwwi.onion/
+
+# Academic & Research
+https://sci-hub.se/
+https://libgen.is/
+
+# Whistleblowing & Leaks
+https://securedrop.org/directory/
+https://www.propub3r6espa33w.onion/
+
+# Testing URLs (may be inactive)
+http://3g2upl4pq6kufc4m.onion/
+http://facebookcorewwwi.onion/
+http://expyuzz4wqqyqhjn.onion/
+http://grams7enufi7jmdl.onion/
+http://kpvz7ki2v5agwt35.onion/

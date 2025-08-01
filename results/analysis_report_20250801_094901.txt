@@ -1,0 +1,118 @@
+============================================================
+TOR NETWORK ANALYSIS REPORT
+============================================================
+Generated: 2025-08-01 09:49:01
+
+SUMMARY
+--------------------
+Total Sites: 29
+Successful: 8
+Success Rate: 27.6%
+Tor Status: CONNECTED
+Exit IP: 45.84.107.54
+
+DETAILED RESULTS
+--------------------
+
+1. https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+   ✓ SUCCESS - DuckDuckGo - Protection. Privacy. Peace of mind.
+   Status: 200
+   Size: 63681 bytes
+
+2. https://3g2upl4pq6kufc4m.onion/
+   ✗ FAILED - Connection error: SOCKSHTTPSConnectionPool(host='3g2upl4pq6kufc4m.onion', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0xffff716b2310>: Failed to establish a new connection: 0x01: General SOCKS server failure'))
+
+3. https://facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion/
+   ✗ FAILED - HTTP 400
+
+4. https://www.facebookcorewwwi.onion/
+   ✗ FAILED - Connection error: SOCKSHTTPSConnectionPool(host='www.facebookcorewwwi.onion', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0xffff716b1390>: Failed to establish a new connection: 0x01: General SOCKS server failure'))
+
+5. https://www.nytimes3xbfgragh.onion/
+   ✗ FAILED - Connection error: SOCKSHTTPSConnectionPool(host='www.nytimes3xbfgragh.onion', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0xffff716b0850>: Failed to establish a new connection: 0x01: General SOCKS server failure'))
+
+6. https://www.propub3r6espa33w.onion/
+   ✗ FAILED - Connection error: SOCKSHTTPSConnectionPool(host='www.propub3r6espa33w.onion', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0xffff716a32d0>: Failed to establish a new connection: 0x01: General SOCKS server failure'))
+
+7. https://www.washingtonpost.com/securedrop/
+   ✗ FAILED - Read timeout
+
+8. https://duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion/
+   ✓ SUCCESS - DuckDuckGo - Protection. Privacy. Peace of mind.
+   Status: 200
+   Size: 63681 bytes
+
+9. https://www.facebookcorewwwi.onion/
+   ✗ FAILED - Connection error: SOCKSHTTPSConnectionPool(host='www.facebookcorewwwi.onion', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0xffff7169ea10>: Failed to establish a new connection: 0x01: General SOCKS server failure'))
+
+10. https://securedrop.org/
+   ✓ SUCCESS - Share and accept documents securely
+   Status: 200
+   Size: 636467 bytes
+
+11. https://www.torproject.org/
+   ✓ SUCCESS - Tor Project | Anonymity Online
+   Status: 200
+   Size: 24233 bytes
+
+12. http://pericouymgycnd5l5enyjaxrknsrf2jg6noygaqhibqs2zv6cyzmpwad.onion/
+   ✓ SUCCESS - AlphaBay Market v2
+   Status: 200
+   Size: 61016 bytes
+
+13. http://zqktlwiuavvvqqt4ybvgvi7tyo4hjl5xgfuvpdf6otjiycgwqbym2qad.onion/
+   ✗ FAILED - Connection error: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+14. https://protonmailrmez3lotccipshtkleegetolb73fuirgj7r4o4vfu7ozyd.onion/
+   ✓ SUCCESS - Proton: Privacy by default
+   Status: 200
+   Size: 232316 bytes
+
+15. https://mail.protonmail.com/
+   ✓ SUCCESS - Proton Mail
+   Status: 200
+   Size: 4810 bytes
+
+16. https://www.facebookcorewwwi.onion/
+   ✗ FAILED - Connection error: SOCKSHTTPSConnectionPool(host='www.facebookcorewwwi.onion', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0xffff710b7b50>: Failed to establish a new connection: 0x01: General SOCKS server failure'))
+
+17. https://blockchainbdgpzk.onion/
+   ✗ FAILED - Connection error: SOCKSHTTPSConnectionPool(host='blockchainbdgpzk.onion', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0xffff710ca590>: Failed to establish a new connection: 0x01: General SOCKS server failure'))
+
+18. http://dreadditevelidot.onion/
+   ✗ FAILED - Connection error: SOCKSHTTPConnectionPool(host='dreadditevelidot.onion', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSConnection object at 0xffff710e0510>: Failed to establish a new connection: 0x01: General SOCKS server failure'))
+
+19. http://www.facebookcorewwwi.onion/
+   ✗ FAILED - Connection error: SOCKSHTTPConnectionPool(host='www.facebookcorewwwi.onion', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSConnection object at 0xffff710e25d0>: Failed to establish a new connection: 0x01: General SOCKS server failure'))
+
+20. https://sci-hub.se/
+   ✗ FAILED - Read timeout
+
+21. https://libgen.is/
+   ✗ FAILED - Connection timeout
+
+22. https://securedrop.org/directory/
+   ✓ SUCCESS - Directory
+   Status: 200
+   Size: 881073 bytes
+
+23. https://www.propub3r6espa33w.onion/
+   ✗ FAILED - Connection error: SOCKSHTTPSConnectionPool(host='www.propub3r6espa33w.onion', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0xffff7167d150>: Failed to establish a new connection: 0x01: General SOCKS server failure'))
+
+24. http://3g2upl4pq6kufc4m.onion/
+   ✗ FAILED - Connection error: SOCKSHTTPConnectionPool(host='3g2upl4pq6kufc4m.onion', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSConnection object at 0xffff70c26f10>: Failed to establish a new connection: 0x01: General SOCKS server failure'))
+
+25. http://facebookcorewwwi.onion/
+   ✗ FAILED - Connection error: SOCKSHTTPConnectionPool(host='facebookcorewwwi.onion', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSConnection object at 0xffff70a34ad0>: Failed to establish a new connection: 0x01: General SOCKS server failure'))
+
+26. http://expyuzz4wqqyqhjn.onion/
+   ✗ FAILED - Connection error: SOCKSHTTPConnectionPool(host='expyuzz4wqqyqhjn.onion', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSConnection object at 0xffff70a366d0>: Failed to establish a new connection: 0x01: General SOCKS server failure'))
+
+27. http://grams7enufi7jmdl.onion/
+   ✗ FAILED - Connection error: SOCKSHTTPConnectionPool(host='grams7enufi7jmdl.onion', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSConnection object at 0xffff710bc410>: Failed to establish a new connection: 0x01: General SOCKS server failure'))
+
+28. http://kpvz7ki2v5agwt35.onion/
+   ✗ FAILED - Connection error: SOCKSHTTPConnectionPool(host='kpvz7ki2v5agwt35.onion', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSConnection object at 0xffff7167dc90>: Failed to establish a new connection: 0x01: General SOCKS server failure'))
+
+29. Unknown
+   ✗ FAILED - Unknown error

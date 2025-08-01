@@ -1,0 +1,10 @@
+requests
+pysocks
+beautifulsoup4
+matplotlib
+seaborn
+jinja2
+markdown
+pillow
+numpy
+pandas

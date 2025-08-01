@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  # Tor network analyzer - runs analysis and generates reports
+  tor-analyzer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tor-network-analyzer:latest
+    container_name: tor-network-analyzer
+    volumes:
+      - ./results:/app/results
+      - ./src/assets:/app/src/assets
+    environment:
+      - TZ=Asia/Seoul
+      - PYTHONUNBUFFERED=1
+    networks:
+      - tor-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep tor || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    profiles:
+      - analyzer
+
+  # Results viewer - serves web interface for viewing reports
+  results-viewer:
+    image: python:3.11-slim
+    container_name: tor-results-viewer
+    working_dir: /app/results
+    volumes:
+      - ./results:/app/results:ro
+    ports:
+      - "8080:8080"
+    networks:
+      - tor-network
+    restart: unless-stopped
+    command: python server.py 8080
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/api/files || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    profiles:
+      - viewer
+
+networks:
+  tor-network:
+    driver: bridge
